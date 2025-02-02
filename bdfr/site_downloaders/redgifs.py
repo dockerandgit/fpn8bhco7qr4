@@ -42,7 +42,7 @@ class Redgifs(BaseDownloader):
             "referer": "https://www.redgifs.com/",
             "origin": "https://www.redgifs.com",
             "content-type": "application/json",
-            "Authorization": f"Bearer ${{ secrets.TEMP_TOKEN }}",
+            "Authorization": f"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhdXRoLXNlcnZpY2UiLCJpYXQiOjE3Mzg1MjQ2OTksImF1ZCI6Imh0dHBzOi8vYXBpLnJlZGdpZnMuY29tIiwiYXpwIjoiMTgyM2MzMWY3ZDMtNzQ1YS02NTg5LTAwMDUtZDhlOGZlMGE0NGMyIiwiZXhwIjoxNzM4NjExMDk5LCJzdWIiOiJjbGllbnQvMTgyM2MzMWY3ZDMtNzQ1YS02NTg5LTAwMDUtZDhlOGZlMGE0NGMyIiwic2NvcGVzIjoicmVhZCIsInZhbGlkX2FkZHIiOiI3MS4xOTMuMTUwLjAiLCJ2YWxpZF9hZ2VudCI6Ik1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMzEuMC4wLjAgU2FmYXJpLzUzNy4zNiIsInJhdGUiOi0xLCJodHRwczovL3JlZGdpZnMuY29tL3Nlc3Npb24taWQiOiIyNDI3MjY5MTg4NzE0NTQ0NDAifQ.pG7zC1RqWOJGn0CmkYfXM1a_mCSa3xpsdrlJtHDD7JJ7q3MlJMYRZqglqNBR8Ukp92wwRfRN_IhpeNYYVy6UQgpT23Rfd-eWnekobMvB8KR-n1lpuVW2SzRfRgdS9boFmKhQi2jzZkIOSBEh3kO5YMHcP0Njdf_XlfFheHcE8eV6wqpi2NTMTPD_GOb3lHX5R681k1Tz8SbouwDJLTyM8ddUobC-4PU2OpqzVRK0wwIRyc_JhTLWcjZB_Xr8-i4qnR6WdcRCsQeolWiXuL4Q3YZyYiPfIhW8dj9Qpxt2MjfGgduVfd7RCJv4IR6Qq0RwRMseuUIYF9ndJl3vyAPC1w",
         }
 
         content = Redgifs.retrieve_url(f"https://api.redgifs.com/v2/gifs/{redgif_id}", headers=headers)
