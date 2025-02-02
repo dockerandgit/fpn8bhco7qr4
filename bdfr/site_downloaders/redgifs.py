@@ -38,9 +38,14 @@ class Redgifs(BaseDownloader):
     def _get_link(url: str) -> set[str]:
         redgif_id = Redgifs._get_id(url)
 
-        auth_token = json.loads(Redgifs.retrieve_url("https://api.redgifs.com/v2/auth/temporary").text)["token"]
-        if not auth_token:
-            raise SiteDownloaderError("Unable to retrieve Redgifs API token")
+        # Load the permanent token from a file
+        try:
+            with open("/config/auth_token.txt", "r") as token_file:
+                auth_token = token_file.read().strip()
+        except FileNotFoundError:
+            raise SiteDownloaderError("Token file not found in /config directory")
+        except Exception as e:
+            raise SiteDownloaderError(f"Error reading token file: {e}")
 
         headers = {
             "referer": "https://www.redgifs.com/",
